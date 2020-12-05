@@ -53,3 +53,24 @@ boarding_passes = batch.map { |item| BoardingPass.new(item) }
 
 # Part One
 puts "The highest seat ID in this batch of boarding passes is #{boarding_passes.max.id}"
+
+# Part Two
+all_seats = (0..(8 * 128)).to_a
+seats_taken = boarding_passes.map(&:id)
+available_seats = all_seats - seats_taken
+
+my_boarding_pass_id = nil
+
+available_seats.each_with_index do |seat, i|
+  # If the previous seat is available, we're on one of the non-existant seats
+  next if available_seats[i - 1] == (seat - 1)
+
+  # Likewise, the next seat must be taken as well
+  next if available_seats[i + 1] == (seat + 1)
+
+  # If both seats are taken, we've found our own seat.
+  my_boarding_pass_id = seat
+  break
+end
+
+puts "Your boarding pass ID is #{my_boarding_pass_id}"
