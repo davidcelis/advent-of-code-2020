@@ -11,6 +11,21 @@ class Node
     @color = color
     @edges = []
   end
+
+  def number_of_required_contents
+    total = 0
+
+    # For each edge...
+    edges.each do |edge|
+      # ... the total must include the amount of bags held
+      total += edge.amount
+
+      # ... and it must include the subcontents of those bags
+      total += (edge.amount * edge.content.number_of_required_contents)
+    end
+
+    total
+  end
 end
 
 # In the context of our graph, an Edge represents a directional connection
@@ -101,3 +116,6 @@ shiny_gold_bag = graph.find("shiny gold")
 containers = graph.containers_for(shiny_gold_bag)
 
 puts "A total of #{containers.size} differently colored bags can contain a shiny gold bag directly or indirectly."
+
+# Part Two
+puts "A shiny gold bag must contain #{shiny_gold_bag.number_of_required_contents} other bags."
