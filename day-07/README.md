@@ -33,7 +33,7 @@ So, in this example, the number of bag colors that can eventually contain at lea
 
 **How many bag colors can eventually contain at least one shiny gold bag?** (The list of rules is quite long; make sure you get all of it.)
 
-# Part Two
+## Part Two
 
 It's getting pretty expensive to fly these days - not because of ticket prices, but because of the ridiculous number of bags you need to buy!
 
