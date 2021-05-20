@@ -6,7 +6,6 @@ GEM
     diff-lcs (1.4.4)
     diffy (3.4.0)
     gist (6.0.0)
-    graphql (1.11.6)
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -16,9 +15,10 @@ GEM
     json (2.3.1)
     method_source (1.0.0)
     mime-types (1.25.1)
-    mini_portile2 (2.4.0)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    mini_portile2 (2.5.1)
+    nokogiri (1.11.5)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     posix-spawn (0.3.15)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -60,13 +60,13 @@ GEM
       pry-macro
       pry-pretty-numeric
       pry-rescue
+    racc (1.5.2)
     yard (0.9.25)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  graphql
   pry-suite
 
 BUNDLED WITH
